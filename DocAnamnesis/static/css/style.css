@@ -1,0 +1,280 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    overflow-y: auto;
+    
+}
+
+header {
+    background-color: #007BFF;
+    color: #007BFF;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
+
+    background-image: url('doc.jpg'); /* Percorso dell'immagine di sfondo */
+    background-size: cover; /* Adatta l'immagine per coprire l'intero sfondo */
+    background-position: center; /* Centra l'immagine */
+    background-repeat: no-repeat; /* Non ripetere l'immagine */
+}
+
+#author-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border-color: #6b6b6b;
+    background-color: #ccc;
+    color: #6b6b6b;
+    outline: none;
+}
+
+#author-btn:hover {
+    background-color: #6b6b6b;
+    color: white;
+    border-color: none;
+}
+
+
+.logo {
+    margin-right: 10px; /* Spazio tra l'icona e il titolo */
+}
+
+.logo svg {
+    width: 40px; /* Larghezza dell'icona */
+    height: 40px; /* Altezza dell'icona */
+    fill: white; /* Colore dell'icona */
+}
+
+.container {
+    display: flex;
+    flex: 1;
+    padding: 20px;
+    overflow: hidden; /* Aggiunto per evitare il trabocco */
+    overflow-y: auto;
+    
+}
+
+.column {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 0 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
+    display: flex;
+    flex-direction: column; /* Rendi la colonna verticale */
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    border: none;
+    max-height: 100%;
+    background-image: url('sfondo.jpg'); /* Percorso dell'immagine di sfondo */
+    background-size: cover; /* Adatta l'immagine per coprire l'intero sfondo */
+    background-position: center; /* Centra l'immagine */
+    background-repeat: no-repeat; /* Non ripetere l'immagine */
+}
+
+.chat-area {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Occupa lo spazio disponibile */
+    margin-bottom: 10px; /* Spazio tra la chat e il footer */
+    height: 100%; /* Imposta l'altezza massima al 100% del div contenitore */
+    max-height: 95%;
+    opacity: 0.9;
+}
+
+.chat-window {
+    flex: 1; /* Occupa lo spazio disponibile */
+    max-height: 100%; /* Imposta l'altezza massima al 100% del div contenitore */
+    overflow-y: hidden; /* Nasconde la barra di scorrimento */
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+
+}
+
+/* Mostra la barra di scorrimento solo quando l'elemento è in stato hover */
+.chat-window:hover {
+    overflow-y: auto; /* Abilita la barra di scorrimento al passaggio del mouse */
+}
+
+/* Nasconde le barre di scorrimento per i browser webkit (Chrome, Safari) */
+.chat-window::-webkit-scrollbar {
+    display: none; /* Nasconde la barra di scorrimento */
+}
+
+/* Nasconde le barre di scorrimento per Firefox */
+.chat-window {
+    scrollbar-width: none; /* Nasconde la barra di scorrimento per Firefox */
+}
+
+
+.input-area {
+    display: flex;
+    margin-top: 10px;
+    outline: none;
+    justify-content: flex-end; /* Posiziona il contenuto in fondo al contenitore */
+    justify-self: flex-end;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    outline: none;
+
+}
+
+button {
+    padding: 10px 15px; /* Padding interno */
+    margin-left: 10px;
+    background-color: #6eacee; /* Colore di sfondo */
+    color: white; /* Colore del testo */
+    border: none; /* Nessun bordo */
+    border-radius: 4px; /* Bordi arrotondati */
+    cursor: pointer; /* Cambia il cursore a mano */
+    outline: none; /* Rimuove il contorno di default */
+    transition: background-color 0.3s ease; /* Transizione del colore di sfondo */
+}
+
+button:focus {
+    outline: none; /* Rimuove il contorno quando il pulsante è selezionato */
+    border-radius: 4px; /* Bordi arrotondati */
+
+}
+
+button:hover {
+    background-color: #007BFF; /* Colore di sfondo al passaggio del mouse */
+    border-radius: 4px; /* Mantieni i bordi arrotondati */
+}
+
+.response-button {
+    align-items: center;
+    padding: 4px 8px;
+    margin-left: 10px;
+    margin-bottom: 10px;;
+    background-color: #6eacee; /* Colore di sfondo */
+    color: white; /* Colore del testo */
+    border: none; /* Nessun bordo */
+    border-radius: 4px; /* Bordi arrotondati */
+    cursor: pointer; /* Cambia il cursore a mano */
+    outline: none; /* Rimuove il contorno di default */
+}
+.response-button:hover {
+    outline: none;
+    border-color: none;
+}
+.response-button:focus {
+    outline: none;
+    border-color: none;
+}
+
+#modelSelect {
+    padding: 10px 15px; /* Padding interno */
+    margin-left: 10px;
+    background-color: rgba(200, 230, 201, 0.5); /* Colore di sfondo */
+    color: black; /* Colore del testo */
+    border: none; /* Nessun bordo */
+    border-radius: 4px; /* Bordi arrotondati */
+    cursor: pointer; /* Cambia il cursore a mano */
+    outline: none; /* Rimuove il contorno di default */
+    transition: background-color 0.3s; /* Transizione del colore di sfondo */
+}
+
+#modelSelect option {
+    background-color: rgba(200, 230, 201, 0.5); /* Colore di sfondo delle opzioni */
+    color: black; /* Colore del testo delle opzioni */
+}
+
+
+footer {
+    text-align: center;
+    height: 25px;
+    color: grey;
+}
+
+.message {
+    display: flex;
+    margin-bottom: 15px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.message.doctor {
+    justify-content: flex-start;
+}
+
+.message.user {
+    justify-content: flex-end;
+}
+
+.message .bubble {
+    max-width: 70%;
+    padding: 10px 15px;
+    border-radius: 20px;
+    position: relative;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.message.doctor .bubble {
+    background-color: #e0f7fa; /* Helles Blau */
+    color: #333;
+    border-top-left-radius: 0;
+}
+
+.message.user .bubble {
+    background-color: #c8e6c9; /* Helles Grün */
+    color: #333;
+    border-top-right-radius: 0;
+}
+
+
+/* Unity-Einbindung */
+.unity-section {
+    width: 50%; /* Beibehalten oder nach Bedarf anpassen */
+    background-color: #CDCDCD;
+    border-color: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Hinzugefügte Eigenschaften für den rechten Abstand */
+    box-sizing: border-box;            /* Padding innerhalb der Breite */
+}w
+
+.unity-section iframe {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .unity-section {
+        width: 100%;
+        height: 400px;
+    }
+}
+
+#send-button i {
+    margin: 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
